@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Cadastro.css";
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import type Usuario from "../../models/Usuario";
-import { cadastraUsuario } from "../../services/Service";
+import { cadastrarUsuario } from "../../services/Service";
 import { ClipLoader } from "react-spinners";
 
 function Cadastro() {
@@ -48,7 +48,7 @@ function Cadastro() {
       setIsLoading(true);
 
       try {
-        await cadastraUsuario("/usuarios/cadastrar", usuario, setUsuario);
+        await cadastrarUsuario("/usuarios/cadastrar", usuario, setUsuario);
         alert("Usuário cadastrado com sucesso!");
       } catch (error) {
         alert("Erro ao cadastrar o usuário!");
@@ -154,11 +154,10 @@ function Cadastro() {
             >
               Cancelar
             </button>
+
             <button
               type="submit"
-              className="rounded text-white bg-indigo-400 
-                           hover:bg-indigo-900 w-1/2 py-2
-                           flex justify-center"
+              className="rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2 flex justify-center"
             >
               {isLoading ? (
                 <ClipLoader color="#ffffff" size={24} />
