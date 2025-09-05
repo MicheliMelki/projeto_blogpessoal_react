@@ -22,7 +22,7 @@ function Navbar() {
         <div className="container flex justify-between text-lg">
           Blog Pessoal
           <div className="flex gap-4">
-            Postagens
+            <Link to='/postagens' className='hover:underline'>Postagens</Link>
             <Link to="/temas" className="hover:underline">
               Temas
             </Link>
@@ -30,7 +30,7 @@ function Navbar() {
               Cadastrar tema
             </Link>
             Perfil
-            <Link to="" onClick={logout} className="houver:underline">
+            <Link to="" onClick={logout} className="hover:underline">
               Sair
             </Link>
           </div>

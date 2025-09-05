@@ -79,18 +79,21 @@ function Login() {
             className="rounded bg-indigo-400 flex justify-center
                                    hover:bg-indigo-900 text-white w-1/2 py-2"
           >
-            {isLoading ?
-                <ClipLoader
-                color="#ffffff"
-                size={24}
-                /> :
-            <span>Entrar</span>
-            }          
-            </button>
+            {isLoading ? (
+              <ClipLoader color="#ffffff" size={24} />
+            ) : (
+              <span>Entrar</span>
+            )}
+          </button>
 
           <hr className="border-slate-800 w-full" />
 
-          <p>Ainda não tem uma conta? Cadastre-se</p>
+          <p>
+            Ainda não tem uma conta?{" "}
+            <Link to="/cadastro" className="text-indigo-600 hover:underline">
+              Cadastre-se
+            </Link>
+          </p>
         </form>
         <div className="fundoLogin hidden lg:block"></div>
       </div>
