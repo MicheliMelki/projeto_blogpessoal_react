@@ -39,7 +39,7 @@ function FormPostagem() {
   // Buscar uma postagem pelo id
   async function buscarPostagemPorId(id: string) {
     try {
-      await buscar(`/postagens/${id}`, setPostagem, {
+      await buscar(`/postagem/${id}`, setPostagem, {
         headers: { Authorization: token },
       });
     } catch (error: any) {
