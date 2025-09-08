@@ -31,9 +31,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setIsLoading(true);
     try {
       await login("/usuarios/logar", usuarioLogin, setUsuario);
-      alert("O usuário foi autenticado com sucesso!");
+      ToastAlerta("Usuário foi autenticado com sucesso!", "sucesso");
     } catch (error) {
-      alert("Os Dados do usuário estão inconsistentes!");
+      ToastAlerta("Os dados do Usuário estão inconsistentes!", "erro");
     }
     setIsLoading(false);
   }
@@ -56,4 +56,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       {children}
     </AuthContext.Provider>
   );
+}
+function ToastAlerta(arg0: string, arg1: string) {
+  throw new Error("Function not implemented.");
 }
